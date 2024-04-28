@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>杨同睿</title>
+<style>
+#aa { width:400px; height:300px; background-color:orange; margin:0 auto; margin-top:50px; overflow: hidden; }
+.aaa{ width:400px; height:300px; background-color:pink; transition: transform 0.3s ease; }
+img{ width:400px; height:300px; }
+#bb{ width:75px; height:10px; background-color:green; margin:0 auto; border-radius:5px; position:relative; top:-10px; left:0;}
+.dd{ display:none; }
+.bbb{ width:10px; height:10px; background-color:black; float:left; border-radius:50%; margin-left:5px;}
+.bbb:hover{ background-color:white; cursor:pointer;}
+</style>
+<script>
+var currentIndex = 0;
+var images = document.getElementsByClassName("aaa");
+
+function showImage(n){
+    for(var i=0; i<images.length; i++){
+        images[i].className = "aaa dd";
+    }
+    images[n].className = "aaa";
+    currentIndex = n;
+}
+
+function autoSlide(){
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+}
+
+window.onload = function(){
+    showImage(0);
+    setInterval(autoSlide, 3000);
+}
+</script>
+</head>
+
+<body>
+<div id="aa">
+    <div class="aaa" id="ab1" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="1.jpg"></div>
+    <div class="aaa dd" id="ab2" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="2.jpg"></div>
+    <div class="aaa dd" id="ab3" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="3.jpg"></div>
+    <div class="aaa dd" id="ab4" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="4.jpg"></div>
+    <div class="aaa dd" id="ab5" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="5.jpg"></div>
+</div>
+<div id="bb">
+    <div class="bbb" onMouseOver="showImage(0)"></div>
+    <div class="bbb" onMouseOver="showImage(1)"></div>
+    <div class="bbb" onMouseOver="showImage(2)"></div>
+    <div class="bbb" onMouseOver="showImage(3)"></div>
+    <div class="bbb" onMouseOver="showImage(4)"></div>
+</div>
+</body>
+</html>
