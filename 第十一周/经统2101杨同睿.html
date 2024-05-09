@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>杨同睿</title>
+<style>
+#aa{ width:300px; height:200px;
+background-color:orange; margin:50px auto;}
+.bb{ width:150px; height:50px; background-color:yellow;
+ float:left; text-align:center; line-height:50px;}
+.cc{ width:300px; height:150px; background-color:gray;
+ float:left; text-align:center; line-height:150px;}
+ .dd{ display:none;}
+ span:hover{ color:red; cursor:pointer; border-bottom:3px solid red; padding:5px; font-size:18px; font-weight:bolder;}
+
+</style>
+<script>
+function x1(){
+	var ccid_1=document.getElementById("ccid1");
+	var ccid_2=document.getElementById("ccid2");
+	ccid_1.className="dd";
+	ccid_2.className="cc";
+}
+	function x2(){
+		var ccid_1=document.getElementById("ccid1");
+		var ccid_2=document.getElementById("ccid2");
+		ccid_1.className="cc";
+		ccid_2.className="dd";
+		}
+</script>
+</head>
+
+<body>
+<div id="aa">
+    <div class="bb"><span onMouseOver="x2()">标题1</span></div>
+    <div class="bb"><span onMouseOver="x1()">标题2</span></div>
+    <div class="cc" id="ccid1">内容1: 电子商务</div>
+    <div class="cc dd" id="ccid2">内容2： 国际贸易</div>
+</div>
+</body>
+</html>
