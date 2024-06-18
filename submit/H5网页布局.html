@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>杨同睿</title>
+<link href="H5网页布局.css" rel="stylesheet" type="text/css">
+<script>
+    var currentIndex = 0;
+    var images = document.getElementsByClassName("aaa");
+    
+    function showImage(n){
+        for(var i=0; i<images.length; i++){
+            images[i].className = "aaa dd";
+        }
+        images[n].className = "aaa";
+        currentIndex = n;
+    }
+    
+    function autoSlide(){
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+    
+    window.onload = function(){
+        showImage(0);
+        setInterval(autoSlide, 3000);
+    }
+    </script>
+</head>
+
+<body>
+    <div id="aa">
+        <header>
+            <div id="bb" >
+            	<img id="xiaohui" src="xiaohui.PNG";>
+            </div>
+            <h1><a href="http://www.nufe.edu.cn" target="new">南京财经大学</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="http://jjxy.nufe.edu.cn" target="new">经济学院</a></li>
+                    <li><a href="https://jrxy.nufe.edu.cn/" target="new">金融学院</a></li>
+                    <li><a href="https://kj.nufe.edu.cn/index.htm" target="new">会计学院</a></li>
+                    <li><a href="https://yxwl.nufe.edu.cn/" target="new">营销学院</a></li>
+                </ul>	
+            </nav>
+        </header>
+    </div>
+    
+    <article>
+        <aside>
+            <h3>南财概况</h3>
+        </aside>
+        <section>
+            <div id="a1">
+                <div class="aaa" id="ab1" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="南财3.jpg"></div>
+                <div class="aaa dd" id="ab2" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="南财2.jpg"></div>
+                <div class="aaa dd" id="ab3" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="南财3.png"></div>
+                <div class="aaa dd" id="ab4" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="南财4.jpg"></div>
+                <div class="aaa dd" id="ab5" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'"><img src="南财1.jpg"></div>
+            </div>
+            <div id="b1">
+                <div class="bbb" onMouseOver="showImage(0)"></div>
+                <div class="bbb" onMouseOver="showImage(1)"></div>
+                <div class="bbb" onMouseOver="showImage(2)"></div>
+                <div class="bbb" onMouseOver="showImage(3)"></div>
+                <div class="bbb" onMouseOver="showImage(4)"></div>
+        </section>
+        <aside>
+        </aside>
+    </article>
+    
+    <article>
+        <aside>
+        </aside>
+        <section>
+            <div id="dd"> 
+                <img id="nc2" src="南财2.jpg";>
+            </div>
+        </section>
+        <aside>
+        </aside>
+    </article>
+    
+    <article>
+        <aside>
+        </aside>
+        <section>
+            <div id="dd"> 
+                <img id="nc3" src="南财1.jpg";>
+            </div>
+        </section>
+        <aside>
+       
+        </aside>
+    </article>
+    
+    <div id="cc">
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
